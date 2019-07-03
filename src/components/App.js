@@ -1,7 +1,12 @@
 import React from 'react';
+import Navigation from './Navigation';
 
 const App = () => {
-  return <h1>Siemanko</h1>
+  return (
+    <>
+      <Navigation />
+    </>
+  )
 }
 
 export default App;
