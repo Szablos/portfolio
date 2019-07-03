@@ -8,7 +8,6 @@ import '../scss/navigation.scss';
 
 const BtnHamburger = props => {
   let iconHamburger = <i className="fa fa-bars"></i>;
-  console.log(window.innerWidth);
 
   if(props.hamburger === true) {
     return null;
@@ -23,7 +22,7 @@ const NavListMobile = props => {
   }
 
   return (
-    <ul className="nav_lists" style={{animation: `${props.appear===false ? "ghost 1s forwards" : "appear 1s ease-in"}`}} >
+    <ul className={`${props.classActive==="open" ? "open" : "nav_lists"}`} style={props.classActive==="open" ? {animation: `${props.appear===false ? "ghost 1s forwards" : "appear 1s ease-in"}`} : null}>
       <li><NavLink to="/" activeStyle={activeStyle}>Strona główna</NavLink></li>
       <li><NavLink to="/about" activeStyle={activeStyle}>O mnie</NavLink></li>
       <li><NavLink to="/projects" activeStyle={activeStyle}>Projekty</NavLink></li>
@@ -35,6 +34,7 @@ const NavListMobile = props => {
 
 class Navigation extends Component {
   state = {
+    classActive: "",
     hamburger: false,
     appear: false
   }
@@ -43,12 +43,14 @@ class Navigation extends Component {
     console.log(window);
     if(this.state.hamburger === false) {
       this.setState({
+        classActive: "open",
         hamburger: true,
         appear: true
       })
     } else {
       this.timeoutId = setTimeout(() => {
         this.setState({
+          classActive: "",
           hamburger: false
         })
       }, 1000)
@@ -60,13 +62,13 @@ class Navigation extends Component {
 
   render() {
 
-    const {hamburger, appear} = this.state;
+    const {hamburger, appear, classActive} = this.state;
 
     return (
       <HashRouter>
         <>
           <nav className="navigation">
-            {hamburger===true ? <NavListMobile click={this.handleHambClick} hamburger={hamburger} appear={appear}/> : null}
+            <NavListMobile click={this.handleHambClick} classActive={classActive} hamburger={hamburger} appear={appear}/>
             <BtnHamburger click={this.handleHambClick} hamburger={hamburger} />
           </nav>
           <Switch>
