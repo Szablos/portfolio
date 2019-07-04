@@ -1,7 +1,16 @@
-import React from 'react';
+import React, {Component} from 'react';
+import '../scss/start.scss';
 
-const Start = () => {
-  return <h1>siema</h1>;
+class Start extends Component {
+  render() {
+    return (
+      <main>
+        <section>
+
+        </section>
+      </main>
+    )
+  }
 }
 
 export default Start;
