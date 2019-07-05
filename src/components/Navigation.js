@@ -18,7 +18,7 @@ const BtnHamburger = props => {
 
 const NavListMobile = props => {
   const activeStyle = {
-    borderBottom: "2px dashed #e7e7e7"
+    borderBottom: "2px dashed #e0e0e0"
   }
 
   return (

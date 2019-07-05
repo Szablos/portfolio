@@ -1,9 +1,10 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Black+Ops+One&display=swap');
 // Reset
 html {
   font-size: 62.5%;
+  overflow: hidden;
 }
 
 * {
@@ -15,9 +16,8 @@ html {
 }
 
 body {
-  overflow: hidden;
   background: url('./images/background.jpg');
-  background-size: contain;
+  background-size: cover;
   position: relative;
 
   &::after {
@@ -35,12 +35,11 @@ body {
 
   &::before {
     content: '';
-    overflow: hidden;
     position: absolute;
     bottom: -100px;
     right: -150px;
-    width: 450px;
-    height: 450px;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
     background-color: #71dd50;
     opacity: .3;
