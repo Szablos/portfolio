@@ -18,7 +18,7 @@ const BtnHamburger = props => {
 
 const NavListMobile = props => {
   const activeStyle = {
-    borderBottom: "2px dashed #a5a5a5"
+    borderBottom: "2px dashed #e0e0e0"
   }
 
   return (
@@ -27,7 +27,7 @@ const NavListMobile = props => {
       <li><NavLink to="/about" activeStyle={activeStyle}>O mnie</NavLink></li>
       <li><NavLink to="/projects" activeStyle={activeStyle}>Projekty</NavLink></li>
       <li><NavLink to="/contact" activeStyle={activeStyle}>Kontakt</NavLink></li>
-      <li><button className="close" onClick={props.click}><i className="fa fa-times"/></button></li>
+      <li className="close"><button className="close" onClick={props.click}><i className="fa fa-times"/></button></li>
     </ul>
   )
 }

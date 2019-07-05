@@ -1,0 +1,92 @@
+@keyframes start {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideLine {
+  0% {
+    opacity: 0;
+    transform: translateX(-500px)
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0)
+  }
+}
+
+main {
+  width: 90vw;
+  height: 83vh;
+  background: url('../images/logo.jpg');
+  background-size: cover;
+  background-position: 50% 0%;
+  margin: 0 auto;
+  border-radius: 30px;
+  -webkit-box-shadow: 0px 0px 21px 0px rgba(189,189,189,1);
+  -moz-box-shadow: 0px 0px 21px 0px rgba(189,189,189,1);
+  box-shadow: 0px 0px 21px 0px rgba(189,189,189,1);
+  animation: start .5s;
+
+  .start_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 100px;
+
+    .text_1 {
+      animation: start .5s;
+      font-family: 'Black Ops One', cursive;
+      font-size: 4rem;
+      text-align: center;
+      color: #1652f7;
+    }
+
+    .text_2 {
+      @extend .text_1;
+      color: #000000;
+    }
+
+    .text_3 {
+      @extend .text_1;
+      color: #15b100;
+    }
+  }
+
+  .separate_line {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30px;
+
+    .anim_line {
+      animation: slideLine 1s cubic-bezier(.36,-0.6,.66,1.55);
+    }
+
+    .fa {
+      font-size: 40px;
+      color: #000000;
+      z-index: 90;
+    }
+  }
+
+  .author_name {
+    width: 320px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px;
+    animation: slideLine .5s cubic-bezier(.36,-0.6,.66,1.55);
+
+    p {
+      font-family: 'Black Ops One', cursive;
+      font-size: 3.5rem;
+    }
+  }
+}
